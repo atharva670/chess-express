@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 16px;
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 32px;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+.lightSquare {
+  background-color: #FFCE9E; /* Light wood color */
+}
+
+.darkSquare {
+  background-color: #D18B47; /* Dark wood color */
+}
+
+.selectedSquare {
+  outline: 2px solid yellow;
+}
+
+.piece {
+  font-size: 36px;
+  line-height: 1;
+}

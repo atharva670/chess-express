@@ -1,0 +1,14 @@
+{
+  "name": "chess-website",
+  "version": "1.0.0",
+  "description": "A minimal chess demo without libraries, using Node.js and Express to store moves.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Atharva Tawade",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

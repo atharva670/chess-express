@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Move History</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Moves</h1>
+  <ul id="moveList"></ul>
+  <button onclick="refreshMoves()">Refresh</button>
+  <a href="/">Back to Game</a>
+
+  <script>
+    // Fetch moves from server and display
+    function refreshMoves() {
+      fetch('/api/moves')
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById('moveList');
+          list.innerHTML = '';
+          if (data.length === 0) {
+            list.innerHTML = '<li>No moves yet.</li>';
+          } else {
+            data.forEach((m, i) => {
+              const li = document.createElement('li');
+              li.textContent = `Move #${i+1}: ${m.piece} from ${m.from} to ${m.to}`;
+              list.appendChild(li);
+            });
+          }
+        })
+        .catch(err => console.error('Error fetching moves:', err));
+    }
+
+    // Load moves immediately
+    window.onload = function() {
+      refreshMoves();
+    };
+  </script>
+</body>
+</html>
